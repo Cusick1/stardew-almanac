@@ -1,6 +1,6 @@
-package com.example.stardew.villagers;
+package com.example.stardew_almanac.villagers;
 
-import com.example.stardew.common.Feeling;
+import com.example.stardew_almanac.common.Feeling;
 import lombok.Data;
 
 import java.util.List;

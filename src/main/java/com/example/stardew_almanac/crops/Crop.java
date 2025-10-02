@@ -1,7 +1,7 @@
-package com.example.stardew.crops;
+package com.example.stardew_almanac.crops;
 
-import com.example.stardew.common.Season;
-import com.example.stardew.villagers.Villager;
+import com.example.stardew_almanac.common.Season;
+import com.example.stardew_almanac.villagers.Villager;
 import lombok.Data;
 
 import java.util.List;
@@ -13,14 +13,14 @@ public class Crop {
     Season season;
     int growthTime;
     int farmingXP;
-    com.example.stardew.crops.CropType type;
+    CropType type;
     int energy;
     int health;
     int price;
     List<Villager> lovedBy;
     List<Villager> dislikedBy;
 
-    public Crop(String name, Season season, int growthTime, int farmingXP, com.example.stardew.crops.CropType type, int energy, int health, int price, List<Villager> lovedBy, List<Villager> dislikedBy) {
+    public Crop(String name, Season season, int growthTime, int farmingXP, CropType type, int energy, int health, int price, List<Villager> lovedBy, List<Villager> dislikedBy) {
         this.name = name;
         this.season = season;
         this.growthTime = growthTime;

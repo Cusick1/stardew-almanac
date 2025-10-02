@@ -1,4 +1,4 @@
-package com.example.stardew.common;
+package com.example.stardew_almanac.common;
 
 public enum Season {
     SPRING,

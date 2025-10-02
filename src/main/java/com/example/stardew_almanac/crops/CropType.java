@@ -1,4 +1,4 @@
-package com.example.stardew.crops;
+package com.example.stardew_almanac.crops;
 
 public enum CropType {
     FRUIT,
