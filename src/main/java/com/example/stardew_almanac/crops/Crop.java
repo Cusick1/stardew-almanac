@@ -17,10 +17,10 @@ public class Crop {
     int energy;
     int health;
     int price;
-    List<Villager> lovedBy;
-    List<Villager> dislikedBy;
+    List<String> lovedBy;
+    List<String> dislikedBy;
 
-    public Crop(String name, Season season, int growthTime, int farmingXP, CropType type, int energy, int health, int price, List<Villager> lovedBy, List<Villager> dislikedBy) {
+    public Crop(String name, Season season, int growthTime, int farmingXP, CropType type, int energy, int health, int price, List<String> lovedBy, List<String> dislikedBy) {
         this.name = name;
         this.season = season;
         this.growthTime = growthTime;
