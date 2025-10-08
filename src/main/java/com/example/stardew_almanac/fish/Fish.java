@@ -13,7 +13,7 @@ public class Fish {
   private String weather;
   private int xp;
   private int price;
-  private List<Season> season;
+  private List<Season> seasons;
   private List<String> location;
   private List<String> usedIn;
 
@@ -24,7 +24,7 @@ public class Fish {
       String weather,
       int xp,
       int price,
-      List<Season> season,
+      List<Season> seasons,
       List<String> location,
       List<String> usedIn) {
     this.name = name;
@@ -33,7 +33,7 @@ public class Fish {
     this.weather = weather;
     this.xp = xp;
     this.price = price;
-    this.season = season;
+    this.seasons = seasons;
     this.location = location;
     this.usedIn = usedIn;
   }

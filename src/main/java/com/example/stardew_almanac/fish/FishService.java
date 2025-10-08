@@ -26,6 +26,10 @@ public class FishService {
             List.of("Fish Taco", "Sashimi")));
   }
 
+  public List<Fish> getFish() {
+    return fishList;
+  }
+
   public Fish getFishByName(String name) {
     for (Fish fish : fishList) {
       if (fish.getName().equalsIgnoreCase(name)) {
@@ -33,5 +37,15 @@ public class FishService {
       }
     }
     return null; // or throw an exception if preferred
+  }
+
+  public List<Fish> getFishBySeason(Season season) {
+    List<Fish> result = new ArrayList<>();
+    for (Fish fish : fishList) {
+      if (fish.getSeasons().contains(season)) {
+        result.add(fish);
+      }
+    }
+    return result;
   }
 }
