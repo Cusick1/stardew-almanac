@@ -1,7 +1,6 @@
 package com.example.stardew_almanac.crops;
 
 import com.example.stardew_almanac.common.Season;
-import com.example.stardew_almanac.villagers.Villager;
 import lombok.Data;
 
 import java.util.List;
