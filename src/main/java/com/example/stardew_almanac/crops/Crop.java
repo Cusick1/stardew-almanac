@@ -8,29 +8,37 @@ import java.util.List;
 @Data
 public class Crop {
 
-    String name;
-    Season season;
-    int growthTime;
-    int farmingXP;
-    CropType type;
-    int energy;
-    int health;
-    int price;
-    List<String> lovedBy;
-    List<String> dislikedBy;
+  String name;
+  Season season;
+  int growthTime;
+  int farmingXP;
+  CropType type;
+  int energy;
+  int health;
+  int price;
+  List<String> lovedBy;
+  List<String> dislikedBy;
 
-    public Crop(String name, Season season, int growthTime, int farmingXP, CropType type, int energy, int health, int price, List<String> lovedBy, List<String> dislikedBy) {
-        this.name = name;
-        this.season = season;
-        this.growthTime = growthTime;
-        this.farmingXP = farmingXP;
-        this.type = type;
-        this.energy = energy;
-        this.health = health;
-        this.price = price;
-        this.lovedBy = lovedBy;
-        this.dislikedBy = dislikedBy;
-    }
-
-
+  public Crop(
+      String name,
+      Season season,
+      int growthTime,
+      int farmingXP,
+      CropType type,
+      int energy,
+      int health,
+      int price,
+      List<String> lovedBy,
+      List<String> dislikedBy) {
+    this.name = name;
+    this.season = season;
+    this.growthTime = growthTime;
+    this.farmingXP = farmingXP;
+    this.type = type;
+    this.energy = energy;
+    this.health = health;
+    this.price = price;
+    this.lovedBy = lovedBy;
+    this.dislikedBy = dislikedBy;
+  }
 }
