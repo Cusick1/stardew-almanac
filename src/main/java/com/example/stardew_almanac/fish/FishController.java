@@ -2,10 +2,7 @@ package com.example.stardew_almanac.fish;
 
 import com.example.stardew_almanac.common.Season;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,13 +22,20 @@ public class FishController {
     return fishService.getFish();
   }
 
-  @GetMapping("/${name}")
-  public Fish getFishByName(@RequestParam String name) {
+  @GetMapping("/{name}")
+  public Fish getFishByName(@PathVariable String name) {
     return fishService.getFishByName(name);
   }
 
-  @GetMapping("/${season}")
-  public List<Fish> getFishBySeason(@RequestParam Season season) {
+  @GetMapping("/{season}")
+  public List<Fish> getFishBySeason(@PathVariable Season season) {
     return fishService.getFishBySeason(season);
+  }
+
+  @GetMapping("/{location}")
+  public List<Fish> getFishByLocation(
+      @RequestParam(value = "season", required = false, defaultValue = "ANY") String season,
+      @PathVariable String location) {
+    return fishService.getFishByLocation(location, season);
   }
 }
