@@ -48,4 +48,15 @@ public class FishService {
     }
     return result;
   }
+
+  public List<Fish> getFishByLocation(String location, String season) {
+    List<Fish> result = new ArrayList<>();
+    Season seasonEnum = Season.valueOf(season.toUpperCase());
+    for (Fish fish : fishList) {
+      if (fish.getLocation().contains(location) && fish.getSeasons().contains(seasonEnum)) {
+        result.add(fish);
+      }
+    }
+    return result;
+  }
 }
