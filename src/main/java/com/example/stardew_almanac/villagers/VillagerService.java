@@ -28,6 +28,10 @@ public class VillagerService {
         new Villager("Alex", "Summer 13", true, List.of("Complete Breakfast", "Salmon Dinner")));
   }
 
+  public List<Villager> getVillagers() {
+    return villagers;
+  }
+
   public Villager getVillagerByName(String name) {
     for (Villager villager : villagers)
       if (villager.getName().equalsIgnoreCase(name)) return villager;

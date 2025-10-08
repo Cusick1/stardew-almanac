@@ -22,7 +22,7 @@ public class CropService {
               List.of("Penny")),
           new Crop(
               "Cauliflower",
-              com.example.stardew_almanac.common.Season.SPRING,
+              Season.SPRING,
               12,
               50,
               CropType.VEGETABLE,
