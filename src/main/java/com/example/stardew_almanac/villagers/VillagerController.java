@@ -1,14 +1,12 @@
 package com.example.stardew_almanac.villagers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/villagers")
 public class VillagerController {
 
   private final VillagerService villagerService;
@@ -18,12 +16,12 @@ public class VillagerController {
     this.villagerService = villagerService;
   }
 
-  @GetMapping("/villagers")
+  @GetMapping()
   public List<Villager> getVillagers() {
     return villagerService.getVillagers();
   }
 
-  @GetMapping("/villager/{name}")
+  @GetMapping("/{name}")
   public Villager getVillagerByName(@PathVariable String name) {
     return villagerService.getVillagerByName(name);
   }
