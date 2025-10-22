@@ -27,15 +27,22 @@ public class FishController {
     return fishService.getFishByName(name);
   }
 
-  @GetMapping("/{season}")
-  public List<Fish> getFishBySeason(@PathVariable Season season) {
-    return fishService.getFishBySeason(season);
+  @GetMapping("/{seasons}")
+  public List<Fish> getFishBySeasons(@PathVariable String seasons) {
+    List<String> seasonList = List.of(seasons.split(","));
+    return fishService.getFishBySeason(seasonList);
   }
 
-  @GetMapping("/{location}")
+  @GetMapping("/{locations}")
   public List<Fish> getFishByLocation(
-      @RequestParam(value = "season", required = false, defaultValue = "ANY") String season,
-      @PathVariable String location) {
-    return fishService.getFishByLocation(location, season);
+      @RequestParam(value = "season", required = false) String seasons,
+      @PathVariable String locations) {
+    List<String> locationsList = List.of(locations.split(","));
+    if (seasons != null) {
+      List<String> seasonList = List.of(seasons.split(","));
+      return fishService.getFishByLocation(locationsList, seasonList);
+    } else {
+      return fishService.getFishByLocation(locationsList);
+    }
   }
 }

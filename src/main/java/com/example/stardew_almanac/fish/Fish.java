@@ -1,13 +1,18 @@
 package com.example.stardew_almanac.fish;
 
 import com.example.stardew_almanac.common.Season;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Data;
 
 import java.util.List;
 
 @Data
+@Entity
+@Table(name = "fish")
 public class Fish {
-  private String name;
+  @Id private String name;
   private String description;
   private String time;
   private String weather;
@@ -37,4 +42,6 @@ public class Fish {
     this.location = location;
     this.usedIn = usedIn;
   }
+
+  public Fish() {}
 }

@@ -1,6 +1,7 @@
 package com.example.stardew_almanac.fish;
 
 import com.example.stardew_almanac.common.Season;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.List;
 @Service
 public class FishService {
 
+  @Autowired private FishRepository fishRepository;
   private final List<Fish> fishList;
 
   public FishService() {
@@ -27,36 +29,22 @@ public class FishService {
   }
 
   public List<Fish> getFish() {
-    return fishList;
+    return fishRepository.findAll();
   }
 
   public Fish getFishByName(String name) {
-    for (Fish fish : fishList) {
-      if (fish.getName().equalsIgnoreCase(name)) {
-        return fish;
-      }
-    }
-    return null; // or throw an exception if preferred
+    return fishRepository.findById(name).orElse(null);
   }
 
-  public List<Fish> getFishBySeason(Season season) {
-    List<Fish> result = new ArrayList<>();
-    for (Fish fish : fishList) {
-      if (fish.getSeasons().contains(season)) {
-        result.add(fish);
-      }
-    }
-    return result;
+  public List<Fish> getFishBySeason(List<String> seasons) {
+    return fishRepository.findBySeasons(seasons);
   }
 
-  public List<Fish> getFishByLocation(String location, String season) {
-    List<Fish> result = new ArrayList<>();
-    Season seasonEnum = Season.valueOf(season.toUpperCase());
-    for (Fish fish : fishList) {
-      if (fish.getLocation().contains(location) && fish.getSeasons().contains(seasonEnum)) {
-        result.add(fish);
-      }
-    }
-    return result;
+  public List<Fish> getFishByLocation(List<String> locations) {
+    return fishRepository.findByLocations(locations);
+  }
+
+  public List<Fish> getFishByLocation(List<String> locations, List<String> seasons) {
+    return fishRepository.findByLocationsAndSeasons(locations, seasons);
   }
 }
