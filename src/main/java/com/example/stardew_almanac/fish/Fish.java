@@ -19,7 +19,7 @@ public class Fish {
   private int xp;
   private int price;
   private List<Season> seasons;
-  private List<String> location;
+  private List<String> locations;
   private List<String> usedIn;
 
   public Fish(
@@ -30,7 +30,7 @@ public class Fish {
       int xp,
       int price,
       List<Season> seasons,
-      List<String> location,
+      List<String> locations,
       List<String> usedIn) {
     this.name = name;
     this.description = description;
@@ -39,7 +39,7 @@ public class Fish {
     this.xp = xp;
     this.price = price;
     this.seasons = seasons;
-    this.location = location;
+    this.locations = locations;
     this.usedIn = usedIn;
   }
 
