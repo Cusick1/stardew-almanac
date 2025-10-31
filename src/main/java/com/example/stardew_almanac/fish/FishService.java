@@ -36,15 +36,15 @@ public class FishService {
     return fishRepository.findById(name).orElse(null);
   }
 
-  public List<Fish> getFishBySeason(List<Season> seasons) {
-    return fishRepository.findBySeasons(seasons);
+  public List<Fish> getFishBySeason(Season season) {
+    return fishRepository.findBySeason(season);
   }
 
-  public List<Fish> getFishByLocations(List<String> locations) {
-    return fishRepository.findByLocations(locations);
+  public List<Fish> getFishByLocations(String location) {
+    return fishRepository.findByLocations(location);
   }
 
-  public List<Fish> getFishByLocations(List<String> locations, List<Season> seasons) {
-    return fishRepository.findByLocationsAndSeasons(locations, seasons);
+  public List<Fish> getFishByLocations(String location, Season season) {
+    return fishRepository.findByLocationAndSeason(location, season);
   }
 }
